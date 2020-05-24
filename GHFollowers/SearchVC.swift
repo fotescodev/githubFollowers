@@ -14,7 +14,9 @@ class SearchVC: UIViewController {
     let usernameTextField = GFTextField()
     let callToActionButton = GFButton(backgroundColor: .systemGreen, title: "Get Followers")
     
-    override func viewDidLoad() {
+    var isUsernameEntered: Bool { return !usernameTextField.text!.isEmpty }
+    
+    override func viewDidLoad() { 
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         
@@ -59,13 +61,17 @@ class SearchVC: UIViewController {
             usernameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
             usernameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
             
-            //height of the textfiekd
+            //height of the textfield
             usernameTextField.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
     
     func configureButton() {
         view.addSubview(callToActionButton)
+        
+        // Button action - pushing Followers VC
+        callToActionButton.addTarget(self, action: #selector(pushFollowerListVC), for: .touchUpInside)
+        
         NSLayoutConstraint.activate([
             // Top constraint anchored to the bottom of the logo image 48
             callToActionButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50),
@@ -79,16 +85,37 @@ class SearchVC: UIViewController {
         ])
     }
     
+    
     func createDismissTabGesture() {
+        print("Gesture recognized")
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
-        
         view.addGestureRecognizer(tap)
+    }
+    
+    @objc func pushFollowerListVC() {
+        
+        guard isUsernameEntered else {
+            presentGFAlertOnMainThread(title: "Empty Username", message: "Please enter your username. Wee need to know who are you looking for 😃", buttonTitle: "Ok")
+            return
+        }
+        
+        let followerListVC = FollowerListVC()
+        followerListVC.username = usernameTextField.text
+        followerListVC.title = usernameTextField.text
+        
+        //Picked up by the UITextFieldDelegate extension bellow
+        navigationController?.pushViewController(followerListVC, animated: true)
     }
 
 }
 
 extension SearchVC: UITextFieldDelegate {
-    // what is delegate subscribing to?
+    // susbcribing to pushFollowersVC() method
+    // textfield (username) -> Get Followers button (#selector(pushFollowerListVC)) -> pushFollowerListVC() pushes the Followers View through the delegate bellow
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        pushFollowerListVC()
+        return true
+    }
     
 }
