@@ -17,4 +17,4 @@ A native iOS application that retrieves a list of github followers and displays 
 - Use the GitHub API - No authentication needed 
     - Followers endpoint - https://developer.github.com/v3/users/followers/
     - User info endpoint - https://developer.github.com/v3/users/
-- When showing more information about a user, what information you display is up to you. If you were creating this product, what information do you think users want to see?
+
