@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		007DECDB248C4E020044A70A /* ErrorMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DECDA248C4E020044A70A /* ErrorMessages.swift */; };
+		007DECDE248C70240044A70A /* FollowerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DECDD248C70240044A70A /* FollowerCell.swift */; };
+		007DECE0248C743E0044A70A /* GFAvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007DECDF248C743E0044A70A /* GFAvatarImageView.swift */; };
 		00A7043D2478B668000CD2CC /* FollowerListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A7043C2478B668000CD2CC /* FollowerListVC.swift */; };
 		00A7043F2478C791000CD2CC /* GFTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A7043E2478C791000CD2CC /* GFTitleLabel.swift */; };
 		00A704412478C9BC000CD2CC /* GFBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A704402478C9BC000CD2CC /* GFBodyLabel.swift */; };
@@ -45,6 +48,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		007DECDA248C4E020044A70A /* ErrorMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessages.swift; sourceTree = "<group>"; };
+		007DECDD248C70240044A70A /* FollowerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerCell.swift; sourceTree = "<group>"; };
+		007DECDF248C743E0044A70A /* GFAvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFAvatarImageView.swift; sourceTree = "<group>"; };
 		00A7043C2478B668000CD2CC /* FollowerListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerListVC.swift; sourceTree = "<group>"; };
 		00A7043E2478C791000CD2CC /* GFTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFTitleLabel.swift; sourceTree = "<group>"; };
 		00A704402478C9BC000CD2CC /* GFBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFBodyLabel.swift; sourceTree = "<group>"; };
@@ -96,6 +102,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		007DECD9248C4DA40044A70A /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				007DECDA248C4E020044A70A /* ErrorMessages.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		007DECDC248C70090044A70A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				007DECDD248C70240044A70A /* FollowerCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		00B8167D247A3AC6009747EC /* Screens */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,11 +131,13 @@
 		00B8167E247A3B09009747EC /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				007DECDC248C70090044A70A /* Cells */,
 				00A704402478C9BC000CD2CC /* GFBodyLabel.swift */,
 				00E72D122471E915005526A7 /* GFTextField.swift */,
 				00A704422478CAA4000CD2CC /* GFAlertVC.swift */,
 				00E72D1024718998005526A7 /* GFButton.swift */,
 				00A7043E2478C791000CD2CC /* GFTitleLabel.swift */,
+				007DECDF248C743E0044A70A /* GFAvatarImageView.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -177,6 +201,7 @@
 		00E060C323CD43300095DE4B /* GHFollowers */ = {
 			isa = PBXGroup;
 			children = (
+				007DECD9248C4DA40044A70A /* Utilities */,
 				00D2588A2485D3A400A6DEDD /* Managers */,
 				00D2588924847BE100A6DEDD /* Model */,
 				00E060D223CD43320095DE4B /* Info.plist */,
@@ -341,9 +366,12 @@
 				00E72D1124718998005526A7 /* GFButton.swift in Sources */,
 				00E72D132471E915005526A7 /* GFTextField.swift in Sources */,
 				00A704432478CAA4000CD2CC /* GFAlertVC.swift in Sources */,
+				007DECE0248C743E0044A70A /* GFAvatarImageView.swift in Sources */,
 				00E060F923D0A3C30095DE4B /* FavoritesListVC.swift in Sources */,
 				00B8167C247A1DA3009747EC /* UIViewController+EXT.swift in Sources */,
+				007DECDE248C70240044A70A /* FollowerCell.swift in Sources */,
 				00E060C523CD43300095DE4B /* AppDelegate.swift in Sources */,
+				007DECDB248C4E020044A70A /* ErrorMessages.swift in Sources */,
 				00D2588C2485D43700A6DEDD /* Follower.swift in Sources */,
 				00A7043F2478C791000CD2CC /* GFTitleLabel.swift in Sources */,
 				00D258902485DA5D00A6DEDD /* NetworkManager.swift in Sources */,
