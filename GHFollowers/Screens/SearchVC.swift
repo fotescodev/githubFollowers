@@ -25,9 +25,10 @@ class SearchVC: UIViewController {
         //placing the text field under the logo
         configureTextField()
         // button configuration & placing
-        configureButton()
-        
-        createDismissTabGesture()
+        configureCallToActionButton()
+
+        createDismissKeyboardTapGesture()
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -66,7 +67,8 @@ class SearchVC: UIViewController {
         ])
     }
     
-    func configureButton() {
+    func configureCallToActionButton()
+ {
         view.addSubview(callToActionButton)
         
         // Button action - pushing Followers VC
@@ -86,14 +88,14 @@ class SearchVC: UIViewController {
     }
     
     
-    func createDismissTabGesture() {
+    func createDismissKeyboardTapGesture() {
         print("Gesture recognized")
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tap)
     }
     
     @objc func pushFollowerListVC() {
-        
+
         guard isUsernameEntered else {
             presentGFAlertOnMainThread(title: "Empty Username", message: "Please enter your username. Wee need to know who are you looking for 😃", buttonTitle: "Ok")
             return

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Follower: Codable {
+struct Follower: Codable, Hashable {
     // safe not to make these optionals because github api always returns these two
     var login: String
     var avatarUrl: String
