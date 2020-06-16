@@ -43,6 +43,7 @@ class GFAvatarImageView: UIImageView {
         
         guard let url = URL(string: urlString) else { return }
         
+        // Since all the errors are being handled and parsed in the Network Manager, I decided to place the actual network call here to avoide the clutter.
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if error != nil { return }
             guard let response = response as? HTTPURLResponse, response.statusCode == 200 else { return }
